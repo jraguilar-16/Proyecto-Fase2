@@ -1,0 +1,20 @@
+{
+  "name": "foundry-invoice-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --env-file-if-exists=.env server.js",
+    "create-agent": "node --env-file-if-exists=.env scripts/create-agent.js"
+  },
+  "dependencies": {
+    "@azure/ai-projects": "^2.10.0",
+    "@azure/identity": "^4.14.1",
+    "express": "^5.3.0",
+    "multer": "^2.0.2"
+  }
+}

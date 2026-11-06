@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <title>Validador de facturas | Asistente IA</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">VF</div>
+        <div class="header-copy">
+          <p class="eyebrow">FUNDAMENTOS DE IA CON MICROSOFT</p>
+          <h1>Validador de facturas</h1>
+        </div>
+        <span class="service-label">Asistente IA</span>
+      </header>
+
+      <section class="chat-panel" aria-label="Conversación con el asistente">
+        <div class="chat-heading">
+          <div>
+            <p class="eyebrow">CHAT</p>
+            <h2>¿Cómo puedo ayudarte?</h2>
+          </div>
+          <div class="chat-actions">
+            <button class="new-chat-button" id="new-chat-button" type="button">Nueva conversación</button>
+            <span class="assistant-avatar" aria-hidden="true">IA</span>
+          </div>
+        </div>
+
+        <div class="message-list" id="message-list" aria-live="polite" aria-relevant="additions text">
+          <div class="message message-assistant">
+            <p>Hola, soy tu asistente de validación de facturas. Cuéntame qué necesitas revisar.</p>
+          </div>
+        </div>
+
+        <form class="composer" id="chat-form">
+          <div class="attachment-row">
+            <input
+              id="file-input"
+              type="file"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              aria-label="Selecciona un archivo PDF, JPG o PNG"
+              hidden
+            >
+            <button class="attachment-button" id="attach-button" type="button" aria-controls="file-input">
+              <span aria-hidden="true">＋</span>
+              <span>Adjuntar archivo</span>
+            </button>
+            <div class="selected-file" id="selected-file" hidden>
+              <span class="file-icon" aria-hidden="true">↥</span>
+              <span class="selected-file-name" id="selected-file-name"></span>
+              <button class="remove-file-button" id="remove-file-button" type="button" aria-label="Quitar archivo">×</button>
+            </div>
+          </div>
+          <label class="visually-hidden" for="message-input">Escribe tu mensaje</label>
+          <textarea
+            id="message-input"
+            name="message"
+            rows="1"
+            maxlength="2000"
+            placeholder="Escribe tu mensaje..."
+            autocomplete="off"
+          ></textarea>
+          <div class="composer-footer">
+            <p class="input-hint">PDF, JPG o PNG · Máximo 10 MB · Mayús + Intro para nueva línea</p>
+            <button class="send-button" id="send-button" type="submit" disabled>
+              <span>Enviar</span>
+              <span aria-hidden="true">↑</span>
+            </button>
+          </div>
+        </form>
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="app-footer">
+        <span class="footer-dot" aria-hidden="true"></span>
+        <p>La conversación se reinicia al recargar la página.</p>
+      </footer>
+    </main>
+  </body>
+</html>
